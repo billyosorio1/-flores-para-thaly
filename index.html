@@ -2,639 +2,823 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#071326">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Thaly ♡</title>
 
 <style>
-*{box-sizing:border-box}
-
-html,body{
-    margin:0;
-    width:100%;
-    height:100%;
-    overflow:hidden;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:Georgia,"Times New Roman",serif;
-    background:#071326;
-    color:#fff;
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
 }
 
-.scene{
-    position:relative;
-    width:100%;
-    height:100dvh;
-    min-height:600px;
-    overflow:hidden;
-    background:
-        radial-gradient(circle at 50% 28%,rgba(255,214,85,.10),transparent 28%),
-        linear-gradient(180deg,#050d1d 0%,#0b1830 54%,#142b20 100%);
-}
-
-/* ESTRELLAS */
-
-.stars{
-    position:absolute;
-    inset:0;
-    background-image:
-        radial-gradient(circle,rgba(255,255,255,.9) 0 1px,transparent 1.5px),
-        radial-gradient(circle,rgba(255,224,133,.7) 0 1px,transparent 1.6px);
-    background-size:82px 82px,137px 137px;
-    background-position:8px 10px,41px 28px;
-    opacity:.68;
-}
-
-/* LUNA */
-
-.moon{
-    position:absolute;
-    top:6.5%;
-    right:9%;
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    background:#fff4bc;
-    box-shadow:0 0 35px rgba(255,231,145,.3);
-}
-
-.moon:after{
-    content:"";
-    position:absolute;
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    left:13px;
-    top:-6px;
-    background:#071326;
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #07100a;
+    color: white;
 }
 
 /* =========================
-   PANTALLA INICIAL
+   ESCENA PRINCIPAL
 ========================= */
 
-.intro{
-    position:absolute;
-    inset:0;
-    z-index:30;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:24px;
+.scene {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 75%, rgba(55, 91, 38, 0.35), transparent 35%),
+        linear-gradient(to bottom, #07100a 0%, #102016 45%, #172d16 100%);
 }
 
-.card{
-    width:min(88vw,380px);
-    padding:34px 25px 30px;
-    text-align:center;
-    border-radius:28px;
-    background:rgba(255,255,255,.075);
-    border:1px solid rgba(255,224,113,.20);
-    backdrop-filter:blur(14px);
-    box-shadow:0 24px 80px rgba(0,0,0,.45);
+/* =========================
+   ESTRELLAS
+========================= */
+
+.stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
 }
 
-.small{
-    font-family:Arial,sans-serif;
-    font-size:10px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:#f4db87;
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: twinkle 3s infinite ease-in-out;
 }
 
-.card h1{
-    margin:13px 0 9px;
-    font-size:39px;
-    font-weight:500;
+.star:nth-child(1) { top: 8%; left: 12%; animation-delay: 0s; }
+.star:nth-child(2) { top: 15%; left: 27%; animation-delay: 1s; }
+.star:nth-child(3) { top: 10%; left: 52%; animation-delay: 2s; }
+.star:nth-child(4) { top: 22%; left: 70%; animation-delay: .5s; }
+.star:nth-child(5) { top: 7%; left: 84%; animation-delay: 1.5s; }
+.star:nth-child(6) { top: 32%; left: 8%; animation-delay: 2.5s; }
+.star:nth-child(7) { top: 28%; left: 92%; animation-delay: 1s; }
+.star:nth-child(8) { top: 38%; left: 35%; animation-delay: .3s; }
+.star:nth-child(9) { top: 17%; left: 42%; animation-delay: 1.8s; }
+.star:nth-child(10) { top: 30%; left: 62%; animation-delay: 2.2s; }
+.star:nth-child(11) { top: 12%; left: 95%; animation-delay: .8s; }
+.star:nth-child(12) { top: 40%; left: 78%; animation-delay: 1.2s; }
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: .25;
+        transform: scale(.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.4);
+    }
 }
 
-.card p{
-    margin:0 0 23px;
-    font:14px/1.5 Arial,sans-serif;
-    color:#ddd8c7;
+/* =========================
+   LUNA
+========================= */
+
+.moon {
+    position: absolute;
+    top: 8%;
+    right: 9%;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: #fff8cf;
+    box-shadow:
+        0 0 25px rgba(255, 248, 207, .45),
+        0 0 60px rgba(255, 240, 150, .12);
 }
 
-.open{
-    display:inline-block;
-    padding:13px 26px;
-    border-radius:999px;
-    background:linear-gradient(135deg,#ffe66a,#ffb52c);
-    color:#2d2209;
-    text-decoration:none;
-    font:700 14px Arial,sans-serif;
-    box-shadow:0 8px 25px rgba(255,190,45,.24);
+.moon::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -13px;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: #07100a;
 }
 
-#open:target ~ .intro{
-    display:none;
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
 }
 
-#open:target ~ .garden{
-    opacity:1;
-    visibility:visible;
+.intro.hidden {
+    opacity: 0;
+    transform: scale(.96);
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+}
+
+.card {
+    width: min(90%, 430px);
+    padding: 45px 30px;
+    text-align: center;
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.11),
+            rgba(255,255,255,.035)
+        );
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.45),
+        inset 0 1px rgba(255,255,255,.08);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.small-text {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #e6dca2;
+    margin-bottom: 18px;
+}
+
+.card h1 {
+    font-size: clamp(38px, 11vw, 58px);
+    font-weight: normal;
+    color: #fff8c7;
+    text-shadow: 0 0 20px rgba(255, 225, 100, .15);
+    margin-bottom: 18px;
+}
+
+.card p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.82);
+    margin-bottom: 30px;
+}
+
+/* =========================
+   BOTÓN
+========================= */
+
+.open {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 150px;
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: #f4cf54;
+    color: #302a0c;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(244, 207, 84, .18);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+.open:hover {
+    transform: translateY(-3px);
+    background: #ffe276;
+
+    box-shadow:
+        0 12px 35px rgba(244, 207, 84, .3);
+}
+
+.open:active {
+    transform: scale(.96);
 }
 
 /* =========================
    JARDÍN
 ========================= */
 
-.garden{
-    position:absolute;
-    inset:0;
-    opacity:0;
-    visibility:hidden;
-    transition:opacity .8s ease;
+.garden {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+.garden.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* =========================
    MENSAJE
 ========================= */
 
-.message{
-    position:absolute;
-    z-index:20;
-    top:8.5%;
-    left:50%;
-    transform:translateX(-50%);
-    width:min(88vw,470px);
-    text-align:center;
+.message {
+    position: absolute;
+    z-index: 8;
+
+    top: 10%;
+    left: 50%;
+
+    width: 90%;
+    max-width: 600px;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    color: #fff7c9;
+
+    opacity: 0;
+    animation: messageIn 1.5s ease forwards;
+    animation-delay: .5s;
 }
 
-.message h2{
-    margin:0 0 13px;
-    font-size:clamp(34px,9vw,52px);
-    line-height:1.05;
-    font-weight:500;
-    color:#fff0a3;
-    text-shadow:0 0 22px rgba(255,215,75,.22);
+.message h2 {
+    font-size: clamp(28px, 8vw, 46px);
+    font-weight: normal;
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 20px rgba(255, 228, 111, .18);
 }
 
-.message p{
-    margin:0 auto 12px;
-    max-width:430px;
-    font-size:clamp(17px,4.7vw,23px);
-    line-height:1.42;
-    color:#fffdf3;
-    text-shadow:0 2px 15px rgba(0,0,0,.45);
+.message p {
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 1.7;
+    color: rgba(255,255,255,.84);
 }
 
-.signature{
-    margin-top:11px!important;
-    font:14px Arial,sans-serif!important;
-    color:#e8dfc7!important;
+@keyframes messageIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
 }
 
 /* =========================
-   TERRENO
+   SUELO
 ========================= */
 
-.ground{
-    position:absolute;
-    left:-18%;
-    bottom:-13%;
-    width:136%;
-    height:42%;
-    border-radius:50% 50% 0 0;
+.ground {
+    position: absolute;
+    bottom: -8%;
+    left: -10%;
+
+    width: 120%;
+    height: 35%;
+
     background:
-        radial-gradient(ellipse at 50% 8%,#3c753a 0%,transparent 52%),
-        linear-gradient(180deg,#1d4828,#071a11 78%);
-    box-shadow:0 -18px 55px rgba(8,34,20,.55);
+        radial-gradient(
+            ellipse at center,
+            #213c1c 0%,
+            #132713 55%,
+            #0b180c 100%
+        );
+
+    border-radius: 50% 50% 0 0;
 }
 
-.grass{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    height:19%;
-    background:linear-gradient(180deg,transparent,#071a10);
+/* =========================
+   PASTO
+========================= */
+
+.grass {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 23%;
+    pointer-events: none;
+}
+
+.grass::before,
+.grass::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    background:
+        repeating-linear-gradient(
+            80deg,
+            transparent 0 15px,
+            rgba(80, 125, 48, .35) 16px 18px,
+            transparent 19px 30px
+        );
 }
 
 /* =========================
    GIRASOLES
 ========================= */
 
-.sunflower{
-    position:absolute;
-    bottom:4%;
-    width:170px;
-    height:300px;
-    transform-origin:50% 100%;
-    animation:sway 5.5s ease-in-out infinite;
+.sunflower {
+    position: absolute;
+    bottom: 15%;
+    width: 150px;
+    height: 300px;
+    transform-origin: bottom center;
 }
 
-.sf-left{
-    left:1%;
-    transform:scale(.72);
-    animation-delay:.4s;
+.sf-left {
+    left: 5%;
+    transform: scale(.78) rotate(-5deg);
 }
 
-.sf-center{
-    left:50%;
-    transform:translateX(-50%) scale(1.02);
-    animation-delay:0s;
-    z-index:4;
+.sf-center {
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%) scale(1);
 }
 
-.sf-right{
-    right:1%;
-    transform:scale(.72);
-    animation-delay:.9s;
+.sf-right {
+    right: 3%;
+    transform: scale(.82) rotate(5deg);
 }
 
-@keyframes sway{
-    0%,100%{rotate:-1deg}
-    50%{rotate:1.4deg}
-}
+/* TALLO */
 
-/* TALLOS */
+.stem {
+    position: absolute;
 
-.stem{
-    position:absolute;
-    left:82px;
-    bottom:0;
-    width:9px;
-    height:215px;
-    border-radius:10px;
-    background:linear-gradient(90deg,#214c27,#71a94b,#234c27);
-    transform-origin:bottom;
-    animation:grow 1.35s cubic-bezier(.2,.8,.2,1) both;
-}
+    bottom: 0;
+    left: 50%;
 
-@keyframes grow{
-    from{transform:scaleY(0)}
-    to{transform:scaleY(1)}
+    width: 10px;
+    height: 210px;
+
+    transform: translateX(-50%);
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            to right,
+            #294d1d,
+            #5d8233,
+            #294d1d
+        );
 }
 
 /* HOJAS */
 
-.leaf{
-    position:absolute;
-    width:75px;
-    height:34px;
-    border-radius:100% 0 100% 0;
-    background:linear-gradient(135deg,#77ad4b,#24562d);
-    box-shadow:inset -5px -4px 8px rgba(0,0,0,.16);
+.leaf {
+    position: absolute;
+
+    width: 65px;
+    height: 30px;
+
+    background: #47752b;
+
+    border-radius: 100% 0 100% 0;
 }
 
-.leaf.a{
-    left:20px;
-    bottom:78px;
-    rotate:-25deg;
+.leaf.left {
+    bottom: 100px;
+    left: 18px;
+    transform: rotate(25deg);
 }
 
-.leaf.b{
-    left:76px;
-    bottom:122px;
-    rotate:198deg;
+.leaf.right {
+    bottom: 135px;
+    right: 12px;
+    transform: scaleX(-1) rotate(25deg);
 }
 
-.leaf.c{
-    left:83px;
-    bottom:49px;
-    rotate:12deg;
+/* FLOR */
+
+.flower {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 130px;
+    height: 130px;
+
+    transform: translateX(-50%);
 }
 
-/* CABEZA */
-
-.flower-head{
-    position:absolute;
-    left:85px;
-    top:26px;
-    width:0;
-    height:0;
-    animation:bloom 1.25s cubic-bezier(.2,.85,.2,1) .55s both;
-}
-
-@keyframes bloom{
-    from{
-        transform:scale(.05) rotate(-10deg);
-    }
-    70%{
-        transform:scale(1.06) rotate(2deg);
-    }
-    to{
-        transform:scale(1);
-    }
+.petals {
+    position: absolute;
+    inset: 0;
 }
 
 /* PÉTALOS */
 
-.petal{
-    position:absolute;
-    left:-15px;
-    top:-72px;
-    width:30px;
-    height:76px;
-    border-radius:58% 58% 45% 45%;
-    transform-origin:15px 72px;
-    background:linear-gradient(
-        90deg,
-        #e9a500 0%,
-        #ffd52f 38%,
-        #fff07b 58%,
-        #f5b300 100%
-    );
-    box-shadow:0 2px 5px rgba(255,186,0,.25);
+.petal {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 42px;
+    height: 70px;
+
+    transform-origin: 50% 90%;
+
+    border-radius: 50% 50% 45% 45%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffe86a,
+            #f5c52d 65%,
+            #d99e15
+        );
+
+    box-shadow:
+        inset 0 -4px 6px rgba(139, 88, 0, .18);
 }
 
-.p1{rotate:0deg}
-.p2{rotate:22.5deg}
-.p3{rotate:45deg}
-.p4{rotate:67.5deg}
-.p5{rotate:90deg}
-.p6{rotate:112.5deg}
-.p7{rotate:135deg}
-.p8{rotate:157.5deg}
-.p9{rotate:180deg}
-.p10{rotate:202.5deg}
-.p11{rotate:225deg}
-.p12{rotate:247.5deg}
-.p13{rotate:270deg}
-.p14{rotate:292.5deg}
-.p15{rotate:315deg}
-.p16{rotate:337.5deg}
+.petal:nth-child(1) {
+    transform: translate(-50%, -90%) rotate(0deg);
+}
+
+.petal:nth-child(2) {
+    transform: translate(-50%, -90%) rotate(30deg);
+}
+
+.petal:nth-child(3) {
+    transform: translate(-50%, -90%) rotate(60deg);
+}
+
+.petal:nth-child(4) {
+    transform: translate(-50%, -90%) rotate(90deg);
+}
+
+.petal:nth-child(5) {
+    transform: translate(-50%, -90%) rotate(120deg);
+}
+
+.petal:nth-child(6) {
+    transform: translate(-50%, -90%) rotate(150deg);
+}
+
+.petal:nth-child(7) {
+    transform: translate(-50%, -90%) rotate(180deg);
+}
+
+.petal:nth-child(8) {
+    transform: translate(-50%, -90%) rotate(210deg);
+}
+
+.petal:nth-child(9) {
+    transform: translate(-50%, -90%) rotate(240deg);
+}
+
+.petal:nth-child(10) {
+    transform: translate(-50%, -90%) rotate(270deg);
+}
+
+.petal:nth-child(11) {
+    transform: translate(-50%, -90%) rotate(300deg);
+}
+
+.petal:nth-child(12) {
+    transform: translate(-50%, -90%) rotate(330deg);
+}
 
 /* PÉTALOS INTERIORES */
 
-.petal.inner{
-    width:23px;
-    height:58px;
-    left:-11px;
-    top:-57px;
-    transform-origin:11.5px 57px;
-    background:linear-gradient(90deg,#ffc400,#ffe96b,#f2a900);
-}
+.petal.inner {
+    width: 31px;
+    height: 54px;
 
-.i1{rotate:11.25deg}
-.i2{rotate:56.25deg}
-.i3{rotate:101.25deg}
-.i4{rotate:146.25deg}
-.i5{rotate:191.25deg}
-.i6{rotate:236.25deg}
-.i7{rotate:281.25deg}
-.i8{rotate:326.25deg}
-
-/* CENTRO CAFÉ */
-
-.center{
-    position:absolute;
-    left:-29px;
-    top:-29px;
-    width:58px;
-    height:58px;
-    border-radius:50%;
     background:
-        radial-gradient(circle at 38% 35%,#a76519 0 4%,transparent 5%),
-        radial-gradient(circle at 67% 62%,#5b260b 0 4%,transparent 5%),
-        radial-gradient(circle,#a55712 0 38%,#70300c 70%,#3a1708 100%);
-    box-shadow:0 0 13px rgba(255,181,35,.35);
+        linear-gradient(
+            to bottom,
+            #ffd94c,
+            #eeb41f
+        );
 }
 
-.center:after{
-    content:"";
-    position:absolute;
-    inset:7px;
-    border-radius:50%;
-    background-image:radial-gradient(circle,#d08a25 0 1px,transparent 1.6px);
-    background-size:7px 7px;
-    opacity:.75;
+.petal.inner:nth-child(13) {
+    transform: translate(-50%, -85%) rotate(15deg);
 }
 
-/* =========================
-   LUCIÉRNAGAS
-========================= */
-
-.firefly{
-    position:absolute;
-    width:5px;
-    height:5px;
-    border-radius:50%;
-    background:#ffe77b;
-    box-shadow:0 0 14px 4px rgba(255,222,77,.65);
-    animation:fly 5s linear infinite;
+.petal.inner:nth-child(14) {
+    transform: translate(-50%, -85%) rotate(60deg);
 }
 
-.fire1{
-    left:14%;
-    bottom:30%;
+.petal.inner:nth-child(15) {
+    transform: translate(-50%, -85%) rotate(105deg);
 }
 
-.fire2{
-    left:29%;
-    bottom:22%;
-    animation-delay:1.2s;
+.petal.inner:nth-child(16) {
+    transform: translate(-50%, -85%) rotate(150deg);
 }
 
-.fire3{
-    left:67%;
-    bottom:27%;
-    animation-delay:2.1s;
+.petal.inner:nth-child(17) {
+    transform: translate(-50%, -85%) rotate(195deg);
 }
 
-.fire4{
-    right:11%;
-    bottom:34%;
-    animation-delay:.8s;
+.petal.inner:nth-child(18) {
+    transform: translate(-50%, -85%) rotate(240deg);
 }
 
-.fire5{
-    left:52%;
-    bottom:20%;
-    animation-delay:3s;
+.petal.inner:nth-child(19) {
+    transform: translate(-50%, -85%) rotate(285deg);
 }
 
-@keyframes fly{
-    0%{
-        opacity:0;
-        transform:translate(0,12px);
-    }
+.petal.inner:nth-child(20) {
+    transform: translate(-50%, -85%) rotate(330deg);
+}
 
-    20%{
-        opacity:1;
-    }
+/* CENTRO DEL GIRASOL */
 
-    80%{
-        opacity:.45;
-    }
+.center {
+    position: absolute;
 
-    100%{
-        opacity:0;
-        transform:translate(12px,-85px);
-    }
+    top: 50%;
+    left: 50%;
+
+    width: 53px;
+    height: 53px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #9c6925 0 5%,
+            transparent 6%
+        ),
+        radial-gradient(
+            circle at 60% 65%,
+            #553415 0 6%,
+            transparent 7%
+        ),
+        radial-gradient(
+            circle,
+            #5d3918 0%,
+            #38220f 75%
+        );
+
+    box-shadow:
+        inset 0 0 0 5px rgba(36, 21, 7, .45),
+        0 0 10px rgba(0,0,0,.3);
 }
 
 /* =========================
-   CELULAR
+   LUCI / LUCIÉRNAGAS
 ========================= */
 
-@media(max-width:600px){
+.firefly {
+    position: absolute;
 
-    .moon{
-        width:48px;
-        height:48px;
-        top:5%;
-        right:8%;
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #fff5a1;
+
+    box-shadow:
+        0 0 8px #fff5a1,
+        0 0 20px rgba(255, 230, 100, .65);
+
+    animation:
+        float 5s ease-in-out infinite,
+        glow 2s ease-in-out infinite;
+}
+
+.firefly:nth-child(1) {
+    left: 20%;
+    bottom: 40%;
+    animation-delay: 0s;
+}
+
+.firefly:nth-child(2) {
+    left: 72%;
+    bottom: 47%;
+    animation-delay: 1.5s;
+}
+
+.firefly:nth-child(3) {
+    left: 82%;
+    bottom: 32%;
+    animation-delay: 2.5s;
+}
+
+.firefly:nth-child(4) {
+    left: 35%;
+    bottom: 50%;
+    animation-delay: 3s;
+}
+
+.firefly:nth-child(5) {
+    left: 58%;
+    bottom: 38%;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0);
     }
 
-    .moon:after{
-        width:44px;
-        height:44px;
-        left:11px;
-        top:-5px;
-    }
-
-    .message{
-        top:6%;
-        width:88vw;
-    }
-
-    .message h2{
-        font-size:clamp(32px,9.5vw,43px);
-        margin-bottom:11px;
-    }
-
-    .message p{
-        font-size:clamp(16px,4.5vw,20px);
-        line-height:1.35;
-        margin-bottom:9px;
-    }
-
-    .signature{
-        font-size:13px!important;
-    }
-
-    .ground{
-        height:37%;
-        bottom:-9%;
-    }
-
-    .sunflower{
-        bottom:2%;
-        height:245px;
-        width:145px;
-    }
-
-    .sf-left{
-        left:-8%;
-        transform:scale(.64);
-    }
-
-    .sf-center{
-        left:50%;
-        transform:translateX(-50%) scale(.78);
-    }
-
-    .sf-right{
-        right:-8%;
-        transform:scale(.64);
-    }
-
-    .stem{
-        left:70px;
-        height:180px;
-        width:8px;
-    }
-
-    .flower-head{
-        left:74px;
-        top:25px;
-    }
-
-    .leaf{
-        width:64px;
-        height:29px;
-    }
-
-    .leaf.a{
-        left:10px;
-        bottom:65px;
-    }
-
-    .leaf.b{
-        left:67px;
-        bottom:102px;
-    }
-
-    .leaf.c{
-        left:70px;
-        bottom:43px;
+    50% {
+        transform: translate(15px, -25px);
     }
 }
 
-/* CELULARES PEQUEÑOS */
-
-@media(max-width:390px){
-
-    .message{
-        top:5.5%;
+@keyframes glow {
+    0%, 100% {
+        opacity: .3;
     }
 
-    .message h2{
-        font-size:31px;
-    }
-
-    .message p{
-        font-size:15.5px;
-    }
-
-    .signature{
-        font-size:12px!important;
-    }
-
-    .sunflower{
-        bottom:0;
-    }
-
-    .sf-left{
-        left:-12%;
-        transform:scale(.57);
-    }
-
-    .sf-center{
-        transform:translateX(-50%) scale(.68);
-    }
-
-    .sf-right{
-        right:-12%;
-        transform:scale(.57);
+    50% {
+        opacity: 1;
     }
 }
 
-/* PANTALLAS BAJAS */
+/* =========================
+   ANIMACIÓN FLORES
+========================= */
 
-@media(max-height:700px){
+.sunflower {
+    animation: flowerAppear 1.8s ease both;
+}
 
-    .message{
-        top:4.5%;
+.sf-left {
+    animation-delay: .2s;
+}
+
+.sf-center {
+    animation-delay: .4s;
+}
+
+.sf-right {
+    animation-delay: .6s;
+}
+
+@keyframes flowerAppear {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(.7);
     }
 
-    .message h2{
-        font-size:32px;
-    }
-
-    .message p{
-        font-size:16px;
-    }
-
-    .sunflower{
-        bottom:-4%;
-    }
-
-    .sf-left{
-        transform:scale(.58);
-    }
-
-    .sf-center{
-        transform:translateX(-50%) scale(.70);
-    }
-
-    .sf-right{
-        transform:scale(.58);
+    to {
+        opacity: 1;
     }
 }
 
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width: 600px) {
+
+    .moon {
+        top: 5%;
+        right: 6%;
+        width: 58px;
+        height: 58px;
+    }
+
+    .moon::after {
+        width: 58px;
+        height: 58px;
+        left: -10px;
+    }
+
+    .card {
+        padding: 38px 22px;
+    }
+
+    .card h1 {
+        font-size: 45px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+
+    .message {
+        top: 7%;
+        width: 88%;
+    }
+
+    .message h2 {
+        font-size: 30px;
+    }
+
+    .message p {
+        font-size: 15px;
+    }
+
+    .sunflower {
+        bottom: 13%;
+    }
+
+    .sf-left {
+        left: -15px;
+        transform: scale(.58) rotate(-5deg);
+    }
+
+    .sf-center {
+        left: 50%;
+        transform: translateX(-50%) scale(.72);
+        bottom: 9%;
+    }
+
+    .sf-right {
+        right: -20px;
+        transform: scale(.6) rotate(5deg);
+    }
+
+    .ground {
+        bottom: -5%;
+        height: 31%;
+    }
+}
+
+/* PANTALLAS MUY PEQUEÑAS */
+
+@media (max-width: 380px) {
+
+    .card {
+        padding: 32px 18px;
+    }
+
+    .card h1 {
+        font-size: 39px;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+
+    .message h2 {
+        font-size: 26px;
+    }
+
+    .message p {
+        font-size: 14px;
+    }
+
+    .sf-left {
+        left: -28px;
+        transform: scale(.48) rotate(-5deg);
+    }
+
+    .sf-center {
+        transform: translateX(-50%) scale(.62);
+    }
+
+    .sf-right {
+        right: -32px;
+        transform: scale(.5) rotate(5deg);
+    }
+}
 </style>
 </head>
 
@@ -642,46 +826,62 @@ body{
 
 <div class="scene">
 
-    <div class="stars"></div>
+    <!-- ESTRELLAS -->
+    <div class="stars">
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+    </div>
 
+    <!-- LUNA -->
     <div class="moon"></div>
 
-    <span id="open"></span>
+    <!-- =========================
+         PANTALLA INICIAL
+    ========================== -->
 
-
-    <!-- PANTALLA INICIAL -->
-
-    <div class="intro">
+    <section class="intro" id="intro">
 
         <div class="card">
 
-            <div class="small">
+            <div class="small-text">
                 un pequeño detalle para
             </div>
 
             <h1>
-                Thaly <span style="color:#ffdf53">♡</span>
+                Thaly ♡
             </h1>
 
             <p>
                 Hay algo esperándote allá afuera...
             </p>
 
-            <a href="#open" class="open">
+            <button
+                type="button"
+                class="open"
+                id="openButton">
                 Abrir ♡
-            </a>
+            </button>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <!-- JARDÍN -->
+    <!-- =========================
+         JARDÍN
+    ========================== -->
 
-    <div class="garden">
-
-
-        <!-- MENSAJE -->
+    <section class="garden" id="garden">
 
         <div class="message">
 
@@ -691,177 +891,156 @@ body{
 
             <p>
                 Así como el sol ilumina los campos,
-                <br>
                 tú iluminas mi vida :)
             </p>
 
-            <p>
+            <p style="margin-top: 10px;">
                 Que estas flores te recuerden
-                <br>
                 lo especial que eres para mí.
             </p>
-
-            <div class="signature">
-                Con cariño ♡
-            </div>
 
         </div>
 
 
-        <!-- TERRENO -->
-
+        <!-- SUELO -->
         <div class="ground"></div>
 
+        <!-- PASTO -->
         <div class="grass"></div>
 
 
-        <!-- =====================
+        <!-- =========================
              GIRASOL IZQUIERDO
-        ====================== -->
+        ========================== -->
 
         <div class="sunflower sf-left">
 
             <div class="stem"></div>
 
-            <div class="leaf a"></div>
-            <div class="leaf b"></div>
-            <div class="leaf c"></div>
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
 
-            <div class="flower-head">
+            <div class="flower">
 
-                <i class="petal p1"></i>
-                <i class="petal p2"></i>
-                <i class="petal p3"></i>
-                <i class="petal p4"></i>
+                <div class="petals">
 
-                <i class="petal p5"></i>
-                <i class="petal p6"></i>
-                <i class="petal p7"></i>
-                <i class="petal p8"></i>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
 
-                <i class="petal p9"></i>
-                <i class="petal p10"></i>
-                <i class="petal p11"></i>
-                <i class="petal p12"></i>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
 
-                <i class="petal p13"></i>
-                <i class="petal p14"></i>
-                <i class="petal p15"></i>
-                <i class="petal p16"></i>
+                </div>
 
-                <i class="petal inner i1"></i>
-                <i class="petal inner i2"></i>
-                <i class="petal inner i3"></i>
-                <i class="petal inner i4"></i>
-
-                <i class="petal inner i5"></i>
-                <i class="petal inner i6"></i>
-                <i class="petal inner i7"></i>
-                <i class="petal inner i8"></i>
-
-                <i class="center"></i>
+                <div class="center"></div>
 
             </div>
 
         </div>
 
 
-        <!-- =====================
+        <!-- =========================
              GIRASOL CENTRAL
-        ====================== -->
+        ========================== -->
 
         <div class="sunflower sf-center">
 
             <div class="stem"></div>
 
-            <div class="leaf a"></div>
-            <div class="leaf b"></div>
-            <div class="leaf c"></div>
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
 
-            <div class="flower-head">
+            <div class="flower">
 
-                <i class="petal p1"></i>
-                <i class="petal p2"></i>
-                <i class="petal p3"></i>
-                <i class="petal p4"></i>
+                <div class="petals">
 
-                <i class="petal p5"></i>
-                <i class="petal p6"></i>
-                <i class="petal p7"></i>
-                <i class="petal p8"></i>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
 
-                <i class="petal p9"></i>
-                <i class="petal p10"></i>
-                <i class="petal p11"></i>
-                <i class="petal p12"></i>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
 
-                <i class="petal p13"></i>
-                <i class="petal p14"></i>
-                <i class="petal p15"></i>
-                <i class="petal p16"></i>
+                </div>
 
-                <i class="petal inner i1"></i>
-                <i class="petal inner i2"></i>
-                <i class="petal inner i3"></i>
-                <i class="petal inner i4"></i>
-
-                <i class="petal inner i5"></i>
-                <i class="petal inner i6"></i>
-                <i class="petal inner i7"></i>
-                <i class="petal inner i8"></i>
-
-                <i class="center"></i>
+                <div class="center"></div>
 
             </div>
 
         </div>
 
 
-        <!-- =====================
+        <!-- =========================
              GIRASOL DERECHO
-        ====================== -->
+        ========================== -->
 
         <div class="sunflower sf-right">
 
             <div class="stem"></div>
 
-            <div class="leaf a"></div>
-            <div class="leaf b"></div>
-            <div class="leaf c"></div>
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
 
-            <div class="flower-head">
+            <div class="flower">
 
-                <i class="petal p1"></i>
-                <i class="petal p2"></i>
-                <i class="petal p3"></i>
-                <i class="petal p4"></i>
+                <div class="petals">
 
-                <i class="petal p5"></i>
-                <i class="petal p6"></i>
-                <i class="petal p7"></i>
-                <i class="petal p8"></i>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
+                    <span class="petal"></span>
 
-                <i class="petal p9"></i>
-                <i class="petal p10"></i>
-                <i class="petal p11"></i>
-                <i class="petal p12"></i>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
+                    <span class="petal inner"></span>
 
-                <i class="petal p13"></i>
-                <i class="petal p14"></i>
-                <i class="petal p15"></i>
-                <i class="petal p16"></i>
+                </div>
 
-                <i class="petal inner i1"></i>
-                <i class="petal inner i2"></i>
-                <i class="petal inner i3"></i>
-                <i class="petal inner i4"></i>
-
-                <i class="petal inner i5"></i>
-                <i class="petal inner i6"></i>
-                <i class="petal inner i7"></i>
-                <i class="petal inner i8"></i>
-
-                <i class="center"></i>
+                <div class="center"></div>
 
             </div>
 
@@ -870,16 +1049,38 @@ body{
 
         <!-- LUCIÉRNAGAS -->
 
-        <div class="firefly fire1"></div>
-        <div class="firefly fire2"></div>
-        <div class="firefly fire3"></div>
-        <div class="firefly fire4"></div>
-        <div class="firefly fire5"></div>
+        <span class="firefly"></span>
+        <span class="firefly"></span>
+        <span class="firefly"></span>
+        <span class="firefly"></span>
+        <span class="firefly"></span>
 
-
-    </div>
+    </section>
 
 </div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+const openButton = document.getElementById("openButton");
+const intro = document.getElementById("intro");
+const garden = document.getElementById("garden");
+
+openButton.addEventListener("click", function () {
+
+    intro.classList.add("hidden");
+
+    setTimeout(function () {
+        garden.classList.add("show");
+    }, 250);
+
+});
+
+</script>
 
 </body>
 </html>
