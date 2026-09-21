@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Thaly ♡</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background: #07111f;
+    font-family: Georgia, "Times New Roman", serif;
+    color: white;
+}
+
+.scene {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 20%, rgba(255,220,90,.12), transparent 25%),
+        linear-gradient(#07111f 0%, #101d32 60%, #18271f 100%);
+}
+
+/* ESTRELLAS */
+
+.stars {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1.5px),
+        radial-gradient(circle, #ffe99a 1px, transparent 1.5px);
+    background-size: 90px 90px, 140px 140px;
+    background-position: 10px 15px, 50px 40px;
+    opacity: .65;
+}
+
+/* LUNA */
+
+.moon {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    right: 10%;
+    top: 8%;
+    background: #fff3b0;
+    box-shadow: 0 0 35px rgba(255,230,140,.35);
+}
+
+.moon::after {
+    content: "";
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    left: 14px;
+    top: -7px;
+    background: #07111f;
+}
+
+/* PANTALLA INICIAL */
+
+.intro {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    animation: aparecer 1s ease;
+}
+
+.card {
+    width: min(90%, 390px);
+    padding: 40px 28px;
+    text-align: center;
+    border-radius: 28px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,220,100,.2);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 70px rgba(0,0,0,.45);
+}
+
+.small {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #f7df92;
+    text-transform: uppercase;
+}
+
+.card h1 {
+    margin: 15px 0;
+    font-size: 42px;
+    font-weight: 500;
+}
+
+.card p {
+    font-family: Arial, sans-serif;
+    color: #ddd6bf;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.open {
+    display: inline-block;
+    padding: 14px 27px;
+    border-radius: 30px;
+    background: linear-gradient(135deg,#ffe66d,#ffb72b);
+    color: #2c2108;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(255,190,40,.25);
+}
+
+/* AL HACER CLICK */
+
+#open:target ~ .intro {
+    display: none;
+}
+
+#open:target ~ .garden {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* JARDÍN */
+
+.garden {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+}
+
+/* MENSAJE */
+
+.message {
+    position: absolute;
+    z-index: 10;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.message h2 {
+    font-size: clamp(35px, 9vw, 55px);
+    font-weight: 500;
+    color: #fff0a0;
+    margin-bottom: 18px;
+    text-shadow: 0 0 25px rgba(255,220,80,.25);
+}
+
+.message p {
+    font-size: clamp(18px, 5vw, 25px);
+    line-height: 1.45;
+    margin-bottom: 15px;
+}
+
+.signature {
+    font-family: Arial, sans-serif;
+    font-size: 14px !important;
+    color: #ddd6bf;
+}
+
+/* SUELO */
+
+.ground {
+    position: absolute;
+    bottom: -15%;
+    left: -10%;
+    width: 120%;
+    height: 45%;
+    border-radius: 50% 50% 0 0;
+    background:
+        radial-gradient(ellipse at center top,#39713a,transparent 50%),
+        linear-gradient(#183d25,#071b12);
+}
+
+/* FLORES */
+
+.flower {
+    position: absolute;
+    bottom: 5%;
+    width: 110px;
+    height: 250px;
+    transform-origin: bottom center;
+    animation: mover 5s ease-in-out infinite;
+}
+
+.f1 {
+    left: 2%;
+    transform: scale(.75);
+}
+
+.f2 {
+    left: 23%;
+    transform: scale(.95);
+    animation-delay: .7s;
+}
+
+.f3 {
+    left: 48%;
+    transform: scale(1.15);
+    animation-delay: .3s;
+}
+
+.f4 {
+    left: 72%;
+    transform: scale(.95);
+    animation-delay: 1s;
+}
+
+.f5 {
+    left: 88%;
+    transform: scale(.7);
+    animation-delay: .4s;
+}
+
+@keyframes mover {
+    0%,100% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: 5px;
+    }
+}
+
+/* TALLOS */
+
+.stem {
+    position: absolute;
+    bottom: 0;
+    left: 51px;
+    width: 7px;
+    height: 185px;
+    border-radius: 10px;
+    background: linear-gradient(
+        90deg,
+        #174226,
+        #5a963e,
+        #1b4b29
+    );
+    animation: crecer 1.5s ease-out;
+}
+
+@keyframes crecer {
+    from {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+/* HOJAS */
+
+.leaf {
+    position: absolute;
+    width: 55px;
+    height: 26px;
+    background: linear-gradient(135deg,#609e43,#214c2b);
+    border-radius: 100% 0 100% 0;
+}
+
+.leaf.left {
+    left: 5px;
+    bottom: 75px;
+    transform: rotate(-25deg);
+}
+
+.leaf.right {
+    left: 47px;
+    bottom: 110px;
+    transform: rotate(200deg);
+}
+
+/* CABEZA DE LA FLOR */
+
+.head {
+    position: absolute;
+    left: 55px;
+    top: 25px;
+    width: 0;
+    height: 0;
+    animation: florecer 1.4s ease-out;
+}
+
+@keyframes florecer {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.petal {
+    position: absolute;
+    width: 25px;
+    height: 58px;
+    margin-left: -12px;
+    margin-top: -56px;
+    border-radius: 60% 60% 45% 45%;
+    background: radial-gradient(
+        ellipse at 50% 85%,
+        #ff9f00 0%,
+        #ffd83d 50%,
+        #fff080 100%
+    );
+    box-shadow: 0 0 12px rgba(255,210,50,.35);
+}
+
+.p2 { transform: rotate(45deg); }
+.p3 { transform: rotate(90deg); }
+.p4 { transform: rotate(135deg); }
+.p5 { transform: rotate(180deg); }
+.p6 { transform: rotate(225deg); }
+.p7 { transform: rotate(270deg); }
+.p8 { transform: rotate(315deg); }
+
+.center {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    left: -17px;
+    top: -17px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        #fff09b 0 10%,
+        #9a4b11 11% 32%,
+        #5f250b 33%
+    );
+}
+
+/* LUCES */
+
+.light {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ffe77f;
+    box-shadow: 0 0 13px 4px rgba(255,220,70,.6);
+    animation: subir 5s infinite;
+}
+
+.l1 { left: 15%; bottom: 30%; }
+.l2 { left: 33%; bottom: 22%; animation-delay: 1s; }
+.l3 { left: 60%; bottom: 27%; animation-delay: 2s; }
+.l4 { left: 78%; bottom: 22%; animation-delay: 3s; }
+.l5 { left: 88%; bottom: 35%; animation-delay: 1.5s; }
+
+@keyframes subir {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-90px);
+    }
+}
+
+/* CORAZÓN */
+
+.heart {
+    color: #ffdf53;
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-height:650px) {
+    .message {
+        top: 7%;
+    }
+
+    .message p {
+        font-size: 18px;
+    }
+
+    .flower {
+        bottom: -3%;
+        transform: scale(.75);
+    }
+
+    .f3 {
+        transform: scale(.85);
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+
+    <div class="stars"></div>
+    <div class="moon"></div>
+
+    <!-- ESTE ENLACE ACTIVA LA SEGUNDA PARTE SIN JAVASCRIPT -->
+    <span id="open"></span>
+
+    <!-- PANTALLA INICIAL -->
+
+    <div class="intro">
+
+        <div class="card">
+
+            <div class="small">
+                un pequeño detalle para
+            </div>
+
+            <h1>
+                Thaly <span class="heart">♡</span>
+            </h1>
+
+            <p>
+                Hay algo esperándote allá afuera...
+            </p>
+
+            <a href="#open" class="open">
+                Abrir ♡
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- JARDÍN -->
+
+    <div class="garden">
+
+        <div class="message">
+
+            <h2>
+                Para Thaly ♡
+            </h2>
+
+            <p>
+                Así como el sol ilumina los campos,
+                <br>
+                tú iluminas mi vida :)
+            </p>
+
+            <p>
+                Que estas flores te recuerden
+                <br>
+                lo especial que eres para mí.
+            </p>
+
+            <div class="signature">
+                Con cariño ♡
+            </div>
+
+        </div>
+
+
+        <!-- SUELO -->
+
+        <div class="ground"></div>
+
+
+        <!-- FLOR 1 -->
+
+        <div class="flower f1">
+
+            <div class="stem"></div>
+
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+
+            <div class="head">
+                <i class="petal"></i>
+                <i class="petal p2"></i>
+                <i class="petal p3"></i>
+                <i class="petal p4"></i>
+                <i class="petal p5"></i>
+                <i class="petal p6"></i>
+                <i class="petal p7"></i>
+                <i class="petal p8"></i>
+                <i class="center"></i>
+            </div>
+
+        </div>
+
+
+        <!-- FLOR 2 -->
+
+        <div class="flower f2">
+
+            <div class="stem"></div>
+
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+
+            <div class="head">
+                <i class="petal"></i>
+                <i class="petal p2"></i>
+                <i class="petal p3"></i>
+                <i class="petal p4"></i>
+                <i class="petal p5"></i>
+                <i class="petal p6"></i>
+                <i class="petal p7"></i>
+                <i class="petal p8"></i>
+                <i class="center"></i>
+            </div>
+
+        </div>
+
+
+        <!-- FLOR 3 -->
+
+        <div class="flower f3">
+
+            <div class="stem"></div>
+
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+
+            <div class="head">
+                <i class="petal"></i>
+                <i class="petal p2"></i>
+                <i class="petal p3"></i>
+                <i class="petal p4"></i>
+                <i class="petal p5"></i>
+                <i class="petal p6"></i>
+                <i class="petal p7"></i>
+                <i class="petal p8"></i>
+                <i class="center"></i>
+            </div>
+
+        </div>
+
+
+        <!-- FLOR 4 -->
+
+        <div class="flower f4">
+
+            <div class="stem"></div>
+
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+
+            <div class="head">
+                <i class="petal"></i>
+                <i class="petal p2"></i>
+                <i class="petal p3"></i>
+                <i class="petal p4"></i>
+                <i class="petal p5"></i>
+                <i class="petal p6"></i>
+                <i class="petal p7"></i>
+                <i class="petal p8"></i>
+                <i class="center"></i>
+            </div>
+
+        </div>
+
+
+        <!-- FLOR 5 -->
+
+        <div class="flower f5">
+
+            <div class="stem"></div>
+
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+
+            <div class="head">
+                <i class="petal"></i>
+                <i class="petal p2"></i>
+                <i class="petal p3"></i>
+                <i class="petal p4"></i>
+                <i class="petal p5"></i>
+                <i class="petal p6"></i>
+                <i class="petal p7"></i>
+                <i class="petal p8"></i>
+                <i class="center"></i>
+            </div>
+
+        </div>
+
+
+        <!-- LUCES -->
+
+        <div class="light l1"></div>
+        <div class="light l2"></div>
+        <div class="light l3"></div>
+        <div class="light l4"></div>
+        <div class="light l5"></div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
