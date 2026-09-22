@@ -2,19 +2,11 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Thaly ♡</title>
 
-
 <style>
-
 /* =========================================================
    CONFIGURACIÓN GENERAL
 ========================================================= */
@@ -33,36 +25,26 @@ body {
 }
 
 body {
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+    font-family: Georgia, "Times New Roman", serif;
     background: #07100a;
     color: white;
 }
-
 
 /* =========================================================
    ESCENA PRINCIPAL
 ========================================================= */
 
 .scene {
-
     position: relative;
-
     width: 100%;
     height: 100vh;
-
     overflow: hidden;
-
     background:
         radial-gradient(
             circle at 50% 62%,
             rgba(255, 191, 72, .22),
             transparent 25%
         ),
-
         linear-gradient(
             to bottom,
             #151426 0%,
@@ -73,25 +55,18 @@ body {
         );
 }
 
-
 /* =========================================================
    LUZ DEL HORIZONTE
 ========================================================= */
 
 .horizon {
-
     position: absolute;
-
     left: 50%;
     bottom: 18%;
-
     width: 100%;
     height: 45%;
-
     transform: translateX(-50%);
-
     pointer-events: none;
-
     background:
         radial-gradient(
             ellipse at center,
@@ -101,21 +76,15 @@ body {
         );
 }
 
-
 /* =========================================================
    DESTELLO AL ABRIR
 ========================================================= */
 
 .light-burst {
-
     position: absolute;
-
     z-index: 100;
-
     inset: 0;
-
     pointer-events: none;
-
     background:
         radial-gradient(
             circle at center,
@@ -123,191 +92,72 @@ body {
             rgba(255, 224, 125, .45) 25%,
             transparent 65%
         );
-
     opacity: 0;
-
 }
 
 .garden.show .light-burst {
-
-    animation:
-        lightBurst 1.8s ease forwards;
-
+    animation: lightBurst 1.8s ease forwards;
 }
 
 @keyframes lightBurst {
-
-    0% {
-        opacity: 0;
-    }
-
-    25% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    100% { opacity: 0; }
 }
-
 
 /* =========================================================
    ESTRELLAS
 ========================================================= */
 
 .stars {
-
     position: absolute;
-
     inset: 0;
-
     pointer-events: none;
-
 }
 
 .star {
-
     position: absolute;
-
     width: 3px;
     height: 3px;
-
     border-radius: 50%;
-
     background: #fff8d0;
-
-    box-shadow:
-        0 0 7px rgba(255, 244, 180, .9);
-
-    animation:
-        twinkle 3s ease-in-out infinite;
-
+    box-shadow: 0 0 7px rgba(255, 244, 180, .9);
+    animation: twinkle 3s ease-in-out infinite;
 }
 
-.star:nth-child(1) {
-    top: 7%;
-    left: 8%;
-    animation-delay: .2s;
-}
-
-.star:nth-child(2) {
-    top: 14%;
-    left: 19%;
-    animation-delay: 1s;
-}
-
-.star:nth-child(3) {
-    top: 7%;
-    left: 34%;
-    animation-delay: 2s;
-}
-
-.star:nth-child(4) {
-    top: 18%;
-    left: 48%;
-    animation-delay: .4s;
-}
-
-.star:nth-child(5) {
-    top: 9%;
-    left: 63%;
-    animation-delay: 1.5s;
-}
-
-.star:nth-child(6) {
-    top: 21%;
-    left: 78%;
-    animation-delay: .8s;
-}
-
-.star:nth-child(7) {
-    top: 11%;
-    left: 91%;
-    animation-delay: 2.3s;
-}
-
-.star:nth-child(8) {
-    top: 28%;
-    left: 12%;
-    animation-delay: 1.2s;
-}
-
-.star:nth-child(9) {
-    top: 30%;
-    left: 28%;
-    animation-delay: 2.1s;
-}
-
-.star:nth-child(10) {
-    top: 26%;
-    left: 72%;
-    animation-delay: .7s;
-}
-
-.star:nth-child(11) {
-    top: 34%;
-    left: 88%;
-    animation-delay: 1.8s;
-}
-
-.star:nth-child(12) {
-    top: 36%;
-    left: 53%;
-    animation-delay: .3s;
-}
-
-.star:nth-child(13) {
-    top: 16%;
-    left: 42%;
-    animation-delay: 2.6s;
-}
-
-.star:nth-child(14) {
-    top: 25%;
-    left: 58%;
-    animation-delay: 1.1s;
-}
-
-.star:nth-child(15) {
-    top: 12%;
-    left: 4%;
-    animation-delay: 1.7s;
-}
+.star:nth-child(1) { top: 7%; left: 8%; animation-delay: .2s; }
+.star:nth-child(2) { top: 14%; left: 19%; animation-delay: 1s; }
+.star:nth-child(3) { top: 7%; left: 34%; animation-delay: 2s; }
+.star:nth-child(4) { top: 18%; left: 48%; animation-delay: .4s; }
+.star:nth-child(5) { top: 9%; left: 63%; animation-delay: 1.5s; }
+.star:nth-child(6) { top: 21%; left: 78%; animation-delay: .8s; }
+.star:nth-child(7) { top: 11%; left: 91%; animation-delay: 2.3s; }
+.star:nth-child(8) { top: 28%; left: 12%; animation-delay: 1.2s; }
+.star:nth-child(9) { top: 30%; left: 28%; animation-delay: 2.1s; }
+.star:nth-child(10) { top: 26%; left: 72%; animation-delay: .7s; }
+.star:nth-child(11) { top: 34%; left: 88%; animation-delay: 1.8s; }
+.star:nth-child(12) { top: 36%; left: 53%; animation-delay: .3s; }
+.star:nth-child(13) { top: 16%; left: 42%; animation-delay: 2.6s; }
+.star:nth-child(14) { top: 25%; left: 58%; animation-delay: 1.1s; }
+.star:nth-child(15) { top: 12%; left: 4%; animation-delay: 1.7s; }
 
 @keyframes twinkle {
-
-    0%, 100% {
-        opacity: .2;
-        transform: scale(.6);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.5);
-    }
-
+    0%, 100% { opacity: .2; transform: scale(.6); }
+    50% { opacity: 1; transform: scale(1.5); }
 }
-
 
 /* =========================================================
    SOL
 ========================================================= */
 
 .sun {
-
     position: absolute;
-
     top: 9%;
     right: 9%;
-
     width: 105px;
     height: 105px;
-
     border-radius: 50%;
-
     background:
-
         radial-gradient(
             circle at 35% 30%,
             #fffde5,
@@ -315,1682 +165,591 @@ body {
             #ffc83e 70%,
             #f2a52c
         );
-
     box-shadow:
-
         0 0 25px rgba(255, 222, 107, .9),
-
         0 0 65px rgba(255, 194, 66, .65),
-
         0 0 130px rgba(255, 170, 55, .35);
-
     opacity: 0;
-
     transform: scale(.5);
-
 }
 
 .garden.show .sun {
-
     animation:
         sunAppear 1.8s cubic-bezier(.2,.8,.2,1) .25s forwards,
         sunGlow 4s ease-in-out 2.1s infinite;
-
 }
 
-
 .sun::before {
-
     content: "";
-
     position: absolute;
-
     inset: -24px;
-
     border-radius: 50%;
-
     background:
-
         repeating-conic-gradient(
             from 0deg,
             rgba(255, 218, 89, .75) 0deg 5deg,
             transparent 5deg 18deg
         );
-
-    mask-image:
-        radial-gradient(
-            circle,
-            transparent 0 58%,
-            black 61% 68%,
-            transparent 71%
-        );
-
-    -webkit-mask-image:
-        radial-gradient(
-            circle,
-            transparent 0 58%,
-            black 61% 68%,
-            transparent 71%
-        );
-
-    animation:
-        rotateSun 25s linear infinite;
-
+    mask-image: radial-gradient(circle, transparent 0 58%, black 61% 68%, transparent 71%);
+    -webkit-mask-image: radial-gradient(circle, transparent 0 58%, black 61% 68%, transparent 71%);
+    animation: rotateSun 25s linear infinite;
 }
-
 
 @keyframes sunAppear {
-
-    0% {
-
-        opacity: 0;
-
-        transform:
-            scale(.35)
-            translateY(20px);
-
-    }
-
-    70% {
-
-        opacity: 1;
-
-        transform:
-            scale(1.08);
-
-    }
-
-    100% {
-
-        opacity: 1;
-
-        transform:
-            scale(1);
-
-    }
-
+    0% { opacity: 0; transform: scale(.35) translateY(20px); }
+    70% { opacity: 1; transform: scale(1.08); }
+    100% { opacity: 1; transform: scale(1); }
 }
-
 
 @keyframes sunGlow {
-
-    0%, 100% {
-
-        filter: brightness(1);
-
-    }
-
-    50% {
-
-        filter: brightness(1.12);
-
-    }
-
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.12); }
 }
-
 
 @keyframes rotateSun {
-
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
-
 
 /* =========================================================
    PANTALLA INICIAL
 ========================================================= */
 
 .intro {
-
     position: relative;
-
     z-index: 200;
-
     width: 100%;
     height: 100vh;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     padding: 25px;
-
-    transition:
-
-        opacity .9s ease,
-
-        transform .9s ease,
-
-        visibility .9s ease;
-
+    transition: opacity .9s ease, transform .9s ease, visibility .9s ease;
 }
-
 
 .intro.hidden {
-
     opacity: 0;
-
-    transform:
-        scale(1.08)
-        translateY(-10px);
-
+    transform: scale(1.08) translateY(-10px);
     visibility: hidden;
-
     pointer-events: none;
-
 }
-
 
 /* =========================================================
    TARJETA
 ========================================================= */
 
 .card {
-
     position: relative;
-
     width: min(92%, 460px);
-
     padding: 50px 34px;
-
     text-align: center;
-
     border-radius: 34px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.17),
-            rgba(255,255,255,.055)
-        );
-
-    border:
-        1px solid rgba(255,255,255,.25);
-
-    box-shadow:
-
-        0 25px 80px rgba(0,0,0,.45),
-
-        inset 0 1px
-        rgba(255,255,255,.18);
-
-    backdrop-filter:
-        blur(18px);
-
-    -webkit-backdrop-filter:
-        blur(18px);
-
-    animation:
-        cardFloat 5s ease-in-out infinite;
-
+    background: linear-gradient(145deg, rgba(255,255,255,.17), rgba(255,255,255,.055));
+    border: 1px solid rgba(255,255,255,.25);
+    box-shadow: 0 25px 80px rgba(0,0,0,.45), inset 0 1px rgba(255,255,255,.18);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    animation: cardFloat 5s ease-in-out infinite;
 }
-
 
 .card::before {
-
     content: "";
-
     position: absolute;
-
     inset: 1px;
-
     border-radius: 33px;
-
-    background:
-
-        linear-gradient(
-            120deg,
-            transparent,
-            rgba(255,255,255,.09),
-            transparent
-        );
-
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,.09), transparent);
     pointer-events: none;
-
 }
-
 
 @keyframes cardFloat {
-
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-7px);
-    }
-
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
 }
-
-
-/* =========================================================
-   TEXTO PEQUEÑO
-========================================================= */
 
 .small-text {
-
     position: relative;
-
     z-index: 2;
-
     font-family: Arial, sans-serif;
-
     font-size: 11px;
-
     letter-spacing: 4px;
-
     text-transform: uppercase;
-
     color: #ffe99a;
-
     margin-bottom: 20px;
-
 }
-
-
-/* =========================================================
-   TÍTULO
-========================================================= */
 
 .card h1 {
-
     position: relative;
-
     z-index: 2;
-
-    font-size:
-        clamp(45px, 13vw, 68px);
-
+    font-size: clamp(45px, 13vw, 68px);
     font-weight: normal;
-
     color: #fff6c5;
-
     margin-bottom: 22px;
-
-    text-shadow:
-
-        0 0 18px
-        rgba(255,222,107,.25),
-
-        0 0 45px
-        rgba(255,193,67,.15);
-
+    text-shadow: 0 0 18px rgba(255,222,107,.25), 0 0 45px rgba(255,193,67,.15);
 }
-
 
 .card p {
-
     position: relative;
-
     z-index: 2;
-
     font-size: 17px;
-
     line-height: 1.8;
-
-    color:
-        rgba(255,255,255,.9);
-
+    color: rgba(255,255,255,.9);
     margin-bottom: 32px;
-
 }
-
-
-/* =========================================================
-   BOTÓN
-========================================================= */
 
 .open {
-
     position: relative;
-
     z-index: 3;
-
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
     min-width: 170px;
-
     padding: 15px 30px;
-
     border: none;
-
     border-radius: 50px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #ffe987,
-            #f5c744
-        );
-
+    background: linear-gradient(135deg, #ffe987, #f5c744);
     color: #3c2d08;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+    font-family: Georgia, "Times New Roman", serif;
     font-size: 17px;
-
     cursor: pointer;
-
-    box-shadow:
-
-        0 8px 30px
-        rgba(246,203,68,.25);
-
-    transition:
-
-        transform .25s ease,
-
-        box-shadow .25s ease,
-
-        filter .25s ease;
-
+    box-shadow: 0 8px 30px rgba(246,203,68,.25);
+    transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
 }
-
 
 .open:hover {
-
-    transform:
-        translateY(-4px)
-        scale(1.03);
-
-    filter:
-        brightness(1.08);
-
-    box-shadow:
-
-        0 15px 40px
-        rgba(246,203,68,.38);
-
+    transform: translateY(-4px) scale(1.03);
+    filter: brightness(1.08);
+    box-shadow: 0 15px 40px rgba(246,203,68,.38);
 }
-
 
 .open:active {
-
-    transform:
-        scale(.95);
-
+    transform: scale(.95);
 }
 
-
 /* =========================================================
-   JARDÍN
+   JARDÍN Y MENSAJE
 ========================================================= */
 
 .garden {
-
     position: absolute;
-
     inset: 0;
-
     opacity: 0;
-
     visibility: hidden;
-
-    transition:
-
-        opacity 1.4s ease,
-
-        visibility 1.4s ease;
-
+    transition: opacity 1.4s ease, visibility 1.4s ease;
 }
-
 
 .garden.show {
-
     opacity: 1;
-
     visibility: visible;
-
 }
-
-
-/* =========================================================
-   MENSAJE
-========================================================= */
 
 .message {
-
     position: absolute;
-
     z-index: 50;
-
     top: 9%;
-
     left: 50%;
-
     width: 90%;
-
     max-width: 650px;
-
-    transform:
-        translateX(-50%)
-        translateY(30px);
-
+    transform: translateX(-50%) translateY(30px);
     text-align: center;
-
     color: #fff5bd;
-
     opacity: 0;
-
 }
-
 
 .garden.show .message {
-
-    animation:
-        messageIn 1.5s ease 3.1s forwards;
-
+    animation: messageIn 1.5s ease 3.1s forwards;
 }
-
 
 .message h2 {
-
-    font-size:
-        clamp(31px, 8vw, 52px);
-
+    font-size: clamp(31px, 8vw, 52px);
     font-weight: normal;
-
     margin-bottom: 17px;
-
-    text-shadow:
-
-        0 0 20px
-        rgba(255,222,104,.3);
-
+    text-shadow: 0 0 20px rgba(255,222,104,.3);
 }
-
 
 .message p {
-
-    font-size:
-        clamp(15px, 4vw, 19px);
-
+    font-size: clamp(15px, 4vw, 19px);
     line-height: 1.75;
-
-    color:
-        rgba(255,255,255,.92);
-
+    color: rgba(255,255,255,.92);
 }
-
 
 @keyframes messageIn {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateX(-50%)
-            translateY(30px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateX(-50%)
-            translateY(0);
-
-    }
-
+    from { opacity: 0; transform: translateX(-50%) translateY(30px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
-
 /* =========================================================
-   SUELO
+   SUELO Y PASTO
 ========================================================= */
 
 .ground {
-
     position: absolute;
-
     bottom: -10%;
-
     left: -10%;
-
     width: 120%;
-
     height: 39%;
-
-    background:
-
-        radial-gradient(
-            ellipse at center,
-            #294d21 0%,
-            #1a3518 45%,
-            #0b190d 85%
-        );
-
-    border-radius:
-        50% 50% 0 0;
-
-    box-shadow:
-
-        0 -15px 50px
-        rgba(14,30,12,.35);
-
+    background: radial-gradient(ellipse at center, #294d21 0%, #1a3518 45%, #0b190d 85%);
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 -15px 50px rgba(14,30,12,.35);
 }
-
-
-/* =========================================================
-   PASTO
-========================================================= */
 
 .grass {
-
     position: absolute;
-
     bottom: 0;
-
     width: 100%;
-
     height: 27%;
-
     pointer-events: none;
-
 }
-
 
 .grass::before {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
-
-    background:
-
-        repeating-linear-gradient(
-            80deg,
-            transparent 0 14px,
-            rgba(91,141,54,.38) 15px 17px,
-            transparent 18px 29px
-        );
-
+    background: repeating-linear-gradient(80deg, transparent 0 14px, rgba(91,141,54,.38) 15px 17px, transparent 18px 29px);
 }
-
 
 .grass::after {
-
     content: "";
-
     position: absolute;
-
     bottom: 0;
-
     width: 100%;
-
     height: 70%;
-
-    background:
-
-        linear-gradient(
-            to top,
-            rgba(8,22,9,.8),
-            transparent
-        );
-
+    background: linear-gradient(to top, rgba(8,22,9,.8), transparent);
 }
 
-
 /* =========================================================
-   GIRASOLES
+   GIRASOLES (CORREGIDO)
 ========================================================= */
 
 .sunflower {
-
     position: absolute;
-
     bottom: 14%;
-
     width: 150px;
     height: 310px;
-
-    transform-origin:
-        bottom center;
-
+    transform-origin: bottom center;
     opacity: 0;
-
 }
-
 
 .sf-left {
-
     left: 4%;
-
 }
-
 
 .sf-center {
-
     left: 50%;
-
     bottom: 8%;
-
-    margin-left: -75px;
-
-    transform:
-        scale(1.08);
-
+    /* Utiliza transform en lugar de margin-left para evitar conflictos */
+    transform: translateX(-50%) scale(1.08);
 }
-
 
 .sf-right {
-
     right: 3%;
-
 }
-
 
 .garden.show .sf-left {
-
     animation:
-
-        flowerAppear
-        1.5s
-        1.0s
-        cubic-bezier(.2,.8,.2,1)
-        forwards,
-
-        sway
-        5s
-        2.6s
-        ease-in-out
-        infinite;
-
+        flowerAppear 1.5s 1.0s cubic-bezier(.2,.8,.2,1) forwards,
+        swaySide 5s 2.6s ease-in-out infinite;
 }
-
 
 .garden.show .sf-center {
-
     animation:
-
-        flowerAppear
-        1.5s
-        1.35s
-        cubic-bezier(.2,.8,.2,1)
-        forwards,
-
-        sway
-        5s
-        2.9s
-        ease-in-out
-        infinite;
-
+        flowerAppearCenter 1.5s 1.35s cubic-bezier(.2,.8,.2,1) forwards,
+        swayCenter 5s 2.9s ease-in-out infinite;
 }
-
 
 .garden.show .sf-right {
-
     animation:
-
-        flowerAppear
-        1.5s
-        1.7s
-        cubic-bezier(.2,.8,.2,1)
-        forwards,
-
-        sway
-        5s
-        3.2s
-        ease-in-out
-        infinite;
-
+        flowerAppear 1.5s 1.7s cubic-bezier(.2,.8,.2,1) forwards,
+        swaySide 5s 3.2s ease-in-out infinite;
 }
-
 
 @keyframes flowerAppear {
-
-    0% {
-
-        opacity: 0;
-
-        transform:
-            translateY(80px)
-            scale(.45);
-
-    }
-
-    65% {
-
-        opacity: 1;
-
-    }
-
-    100% {
-
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-
-    }
-
+    0% { opacity: 0; transform: translateY(80px) scale(.45); }
+    65% { opacity: 1; }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-
-@keyframes sway {
-
-    0%, 100% {
-
-        margin-left: 0;
-
-    }
-
-    50% {
-
-        margin-left: 6px;
-
-    }
-
+/* Animación específica de entrada para el central que respeta el centrado */
+@keyframes flowerAppearCenter {
+    0% { opacity: 0; transform: translateX(-50%) translateY(80px) scale(.45); }
+    65% { opacity: 1; }
+    100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1.08); }
 }
 
+/* Oscilación para los laterales */
+@keyframes swaySide {
+    0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+    50% { transform: translateY(0) scale(1) rotate(2deg); }
+}
+
+/* Oscilación para el central sin perder la posición x = -50% */
+@keyframes swayCenter {
+    0%, 100% { transform: translateX(-50%) scale(1.08) rotate(0deg); }
+    50% { transform: translateX(-50%) scale(1.08) rotate(2deg); }
+}
 
 /* =========================================================
-   TALLO
+   PARTES DE LAS FLORES
 ========================================================= */
 
 .stem {
-
     position: absolute;
-
     bottom: 0;
-
     left: 50%;
-
     width: 10px;
-
     height: 220px;
-
-    transform:
-        translateX(-50%);
-
+    transform: translateX(-50%);
     border-radius: 10px;
-
-    background:
-
-        linear-gradient(
-            to right,
-            #294c1c,
-            #638b36,
-            #31551f
-        );
-
+    background: linear-gradient(to right, #294c1c, #638b36, #31551f);
 }
-
-
-/* =========================================================
-   HOJAS
-========================================================= */
 
 .leaf {
-
     position: absolute;
-
     width: 72px;
-
     height: 32px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #64983b,
-            #315f25
-        );
-
-    border-radius:
-        100% 0 100% 0;
-
+    background: linear-gradient(135deg, #64983b, #315f25);
+    border-radius: 100% 0 100% 0;
 }
-
 
 .leaf.left {
-
     bottom: 98px;
-
     left: 12px;
-
-    transform:
-        rotate(25deg);
-
+    transform: rotate(25deg);
 }
-
 
 .leaf.right {
-
     bottom: 140px;
-
     right: 5px;
-
-    transform:
-        scaleX(-1)
-        rotate(25deg);
-
+    transform: scaleX(-1) rotate(25deg);
 }
-
-
-/* =========================================================
-   FLOR
-========================================================= */
 
 .flower {
-
     position: absolute;
-
     top: 0;
-
     left: 50%;
-
     width: 140px;
-
     height: 140px;
-
-    transform:
-        translateX(-50%);
-
+    transform: translateX(-50%);
 }
-
 
 .petals {
-
     position: absolute;
-
     inset: 0;
-
 }
-
-
-/* =========================================================
-   PÉTALOS
-========================================================= */
 
 .petal {
-
     position: absolute;
-
     left: 50%;
-
     top: 50%;
-
     width: 44px;
-
     height: 74px;
-
-    transform-origin:
-        50% 90%;
-
-    border-radius:
-        50% 50% 45% 45%;
-
-    background:
-
-        linear-gradient(
-            to bottom,
-            #fff071,
-            #f6c52e 60%,
-            #d99a13
-        );
-
-    box-shadow:
-
-        inset 0 -5px 7px
-        rgba(139,88,0,.18);
-
+    transform-origin: 50% 90%;
+    border-radius: 50% 50% 45% 45%;
+    background: linear-gradient(to bottom, #fff071, #f6c52e 60%, #d99a13);
+    box-shadow: inset 0 -5px 7px rgba(139,88,0,.18);
 }
 
-
-.petal:nth-child(1) {
-    transform: translate(-50%,-90%) rotate(0deg);
-}
-
-.petal:nth-child(2) {
-    transform: translate(-50%,-90%) rotate(30deg);
-}
-
-.petal:nth-child(3) {
-    transform: translate(-50%,-90%) rotate(60deg);
-}
-
-.petal:nth-child(4) {
-    transform: translate(-50%,-90%) rotate(90deg);
-}
-
-.petal:nth-child(5) {
-    transform: translate(-50%,-90%) rotate(120deg);
-}
-
-.petal:nth-child(6) {
-    transform: translate(-50%,-90%) rotate(150deg);
-}
-
-.petal:nth-child(7) {
-    transform: translate(-50%,-90%) rotate(180deg);
-}
-
-.petal:nth-child(8) {
-    transform: translate(-50%,-90%) rotate(210deg);
-}
-
-.petal:nth-child(9) {
-    transform: translate(-50%,-90%) rotate(240deg);
-}
-
-.petal:nth-child(10) {
-    transform: translate(-50%,-90%) rotate(270deg);
-}
-
-.petal:nth-child(11) {
-    transform: translate(-50%,-90%) rotate(300deg);
-}
-
-.petal:nth-child(12) {
-    transform: translate(-50%,-90%) rotate(330deg);
-}
-
-
-/* =========================================================
-   PÉTALOS INTERIORES
-========================================================= */
+.petal:nth-child(1) { transform: translate(-50%,-90%) rotate(0deg); }
+.petal:nth-child(2) { transform: translate(-50%,-90%) rotate(30deg); }
+.petal:nth-child(3) { transform: translate(-50%,-90%) rotate(60deg); }
+.petal:nth-child(4) { transform: translate(-50%,-90%) rotate(90deg); }
+.petal:nth-child(5) { transform: translate(-50%,-90%) rotate(120deg); }
+.petal:nth-child(6) { transform: translate(-50%,-90%) rotate(150deg); }
+.petal:nth-child(7) { transform: translate(-50%,-90%) rotate(180deg); }
+.petal:nth-child(8) { transform: translate(-50%,-90%) rotate(210deg); }
+.petal:nth-child(9) { transform: translate(-50%,-90%) rotate(240deg); }
+.petal:nth-child(10) { transform: translate(-50%,-90%) rotate(270deg); }
+.petal:nth-child(11) { transform: translate(-50%,-90%) rotate(300deg); }
+.petal:nth-child(12) { transform: translate(-50%,-90%) rotate(330deg); }
 
 .petal.inner {
-
     width: 32px;
-
     height: 55px;
-
-    background:
-
-        linear-gradient(
-            to bottom,
-            #ffe35b,
-            #eeb21c
-        );
-
+    background: linear-gradient(to bottom, #ffe35b, #eeb21c);
 }
 
-
-.petal.inner:nth-child(13) {
-    transform: translate(-50%,-85%) rotate(15deg);
-}
-
-.petal.inner:nth-child(14) {
-    transform: translate(-50%,-85%) rotate(60deg);
-}
-
-.petal.inner:nth-child(15) {
-    transform: translate(-50%,-85%) rotate(105deg);
-}
-
-.petal.inner:nth-child(16) {
-    transform: translate(-50%,-85%) rotate(150deg);
-}
-
-.petal.inner:nth-child(17) {
-    transform: translate(-50%,-85%) rotate(195deg);
-}
-
-.petal.inner:nth-child(18) {
-    transform: translate(-50%,-85%) rotate(240deg);
-}
-
-.petal.inner:nth-child(19) {
-    transform: translate(-50%,-85%) rotate(285deg);
-}
-
-.petal.inner:nth-child(20) {
-    transform: translate(-50%,-85%) rotate(330deg);
-}
-
-
-/* =========================================================
-   CENTRO DEL GIRASOL
-========================================================= */
+.petal.inner:nth-child(13) { transform: translate(-50%,-85%) rotate(15deg); }
+.petal.inner:nth-child(14) { transform: translate(-50%,-85%) rotate(60deg); }
+.petal.inner:nth-child(15) { transform: translate(-50%,-85%) rotate(105deg); }
+.petal.inner:nth-child(16) { transform: translate(-50%,-85%) rotate(150deg); }
+.petal.inner:nth-child(17) { transform: translate(-50%,-85%) rotate(195deg); }
+.petal.inner:nth-child(18) { transform: translate(-50%,-85%) rotate(240deg); }
+.petal.inner:nth-child(19) { transform: translate(-50%,-85%) rotate(285deg); }
+.petal.inner:nth-child(20) { transform: translate(-50%,-85%) rotate(330deg); }
 
 .center {
-
     position: absolute;
-
     top: 50%;
-
     left: 50%;
-
     width: 57px;
-
     height: 57px;
-
-    transform:
-        translate(-50%,-50%);
-
+    transform: translate(-50%,-50%);
     border-radius: 50%;
-
     background:
-
-        radial-gradient(
-            circle at 30% 25%,
-            #a9782c 0 5%,
-            transparent 6%
-        ),
-
-        radial-gradient(
-            circle at 65% 65%,
-            #68431d 0 5%,
-            transparent 6%
-        ),
-
-        radial-gradient(
-            circle,
-            #70451c 0%,
-            #39220e 72%
-        );
-
-    box-shadow:
-
-        inset 0 0 0 5px
-        rgba(31,18,5,.45),
-
-        0 0 15px
-        rgba(0,0,0,.35);
-
+        radial-gradient(circle at 30% 25%, #a9782c 0 5%, transparent 6%),
+        radial-gradient(circle at 65% 65%, #68431d 0 5%, transparent 6%),
+        radial-gradient(circle, #70451c 0%, #39220e 72%);
+    box-shadow: inset 0 0 0 5px rgba(31,18,5,.45), 0 0 15px rgba(0,0,0,.35);
 }
 
-
 /* =========================================================
-   FLORES PEQUEÑAS DEL JARDÍN
+   DETALLES EXTRA (FLORES PEQUEÑAS, LUCIÉRNAGAS, CORAZONES)
 ========================================================= */
 
 .small-flower {
-
     position: absolute;
-
     z-index: 4;
-
     width: 12px;
     height: 12px;
-
     border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            #fff4a8 0 25%,
-            #f7cf4d 26% 100%
-        );
-
-    box-shadow:
-
-        0 0 8px
-        rgba(255,226,113,.45);
-
+    background: radial-gradient(circle, #fff4a8 0 25%, #f7cf4d 26% 100%);
+    box-shadow: 0 0 8px rgba(255,226,113,.45);
     opacity: 0;
-
 }
 
-
-.garden.show .small-flower {
-
-    animation:
-        littleFlowerAppear
-        1s
-        2.7s
-        ease
-        forwards;
-
-}
-
-
-.small-flower:nth-of-type(1) {
-
-    left: 18%;
-    bottom: 18%;
-
-}
-
-.small-flower:nth-of-type(2) {
-
-    left: 29%;
-    bottom: 14%;
-
-    animation-delay: 2.9s !important;
-
-}
-
-.small-flower:nth-of-type(3) {
-
-    left: 69%;
-    bottom: 17%;
-
-    animation-delay: 3.1s !important;
-
-}
-
-.small-flower:nth-of-type(4) {
-
-    left: 82%;
-    bottom: 21%;
-
-    animation-delay: 3.3s !important;
-
-}
-
+.garden.show .small-flower { animation: littleFlowerAppear 1s 2.7s ease forwards; }
+.small-flower:nth-of-type(1) { left: 18%; bottom: 18%; }
+.small-flower:nth-of-type(2) { left: 29%; bottom: 14%; animation-delay: 2.9s !important; }
+.small-flower:nth-of-type(3) { left: 69%; bottom: 17%; animation-delay: 3.1s !important; }
+.small-flower:nth-of-type(4) { left: 82%; bottom: 21%; animation-delay: 3.3s !important; }
 
 @keyframes littleFlowerAppear {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            scale(0);
-
-    }
-
-    to {
-
-        opacity: .9;
-
-        transform:
-            scale(1);
-
-    }
-
+    from { opacity: 0; transform: scale(0); }
+    to { opacity: .9; transform: scale(1); }
 }
-
-
-/* =========================================================
-   LUCIÉRNAGAS
-========================================================= */
 
 .firefly {
-
     position: absolute;
-
     z-index: 20;
-
     width: 6px;
     height: 6px;
-
     border-radius: 50%;
-
     background: #fff5a1;
-
-    box-shadow:
-
-        0 0 8px #fff5a1,
-
-        0 0 20px
-        rgba(255,230,100,.7),
-
-        0 0 35px
-        rgba(255,220,80,.25);
-
+    box-shadow: 0 0 8px #fff5a1, 0 0 20px rgba(255,230,100,.7), 0 0 35px rgba(255,220,80,.25);
     opacity: 0;
-
 }
-
 
 .garden.show .firefly {
-
     animation:
-
-        fireflyAppear
-        1s
-        3.4s
-        ease
-        forwards,
-
-        float
-        6s
-        4.2s
-        ease-in-out
-        infinite,
-
-        glow
-        2s
-        4.2s
-        ease-in-out
-        infinite;
-
+        fireflyAppear 1s 3.4s ease forwards,
+        float 6s 4.2s ease-in-out infinite,
+        glow 2s 4.2s ease-in-out infinite;
 }
 
-
-.firefly:nth-of-type(1) {
-
-    left: 17%;
-    bottom: 38%;
-
-}
-
-.firefly:nth-of-type(2) {
-
-    left: 73%;
-    bottom: 45%;
-
-    animation-delay: 3.6s !important;
-
-}
-
-.firefly:nth-of-type(3) {
-
-    left: 84%;
-    bottom: 30%;
-
-    animation-delay: 3.8s !important;
-
-}
-
-.firefly:nth-of-type(4) {
-
-    left: 37%;
-    bottom: 48%;
-
-    animation-delay: 4s !important;
-
-}
-
-.firefly:nth-of-type(5) {
-
-    left: 59%;
-    bottom: 36%;
-
-    animation-delay: 4.2s !important;
-
-}
-
-.firefly:nth-of-type(6) {
-
-    left: 27%;
-    bottom: 28%;
-
-    animation-delay: 4.4s !important;
-
-}
-
+.firefly:nth-of-type(1) { left: 17%; bottom: 38%; }
+.firefly:nth-of-type(2) { left: 73%; bottom: 45%; animation-delay: 3.6s !important; }
+.firefly:nth-of-type(3) { left: 84%; bottom: 30%; animation-delay: 3.8s !important; }
+.firefly:nth-of-type(4) { left: 37%; bottom: 48%; animation-delay: 4s !important; }
+.firefly:nth-of-type(5) { left: 59%; bottom: 36%; animation-delay: 4.2s !important; }
+.firefly:nth-of-type(6) { left: 27%; bottom: 28%; animation-delay: 4.4s !important; }
 
 @keyframes fireflyAppear {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            scale(0);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            scale(1);
-
-    }
-
+    from { opacity: 0; transform: scale(0); }
+    to { opacity: 1; transform: scale(1); }
 }
-
 
 @keyframes float {
-
-    0%, 100% {
-
-        transform:
-            translate(0,0);
-
-    }
-
-    50% {
-
-        transform:
-            translate(18px,-30px);
-
-    }
-
+    0%, 100% { transform: translate(0,0); }
+    50% { transform: translate(18px,-30px); }
 }
-
 
 @keyframes glow {
-
-    0%, 100% {
-
-        opacity: .3;
-
-    }
-
-    50% {
-
-        opacity: 1;
-
-    }
-
+    0%, 100% { opacity: .3; }
+    50% { opacity: 1; }
 }
-
-
-/* =========================================================
-   CORAZONES
-========================================================= */
 
 .heart {
-
     position: absolute;
-
     z-index: 25;
-
     color: #ffe9a1;
-
     font-size: 15px;
-
     opacity: 0;
-
 }
 
-
-.garden.show .heart {
-
-    animation:
-        heartFloat
-        7s
-        4s
-        ease-in-out
-        infinite;
-
-}
-
-
-.heart:nth-of-type(1) {
-
-    left: 12%;
-    bottom: 35%;
-
-}
-
-
-.heart:nth-of-type(2) {
-
-    left: 82%;
-    bottom: 42%;
-
-    animation-delay: 5s !important;
-
-}
-
-
-.heart:nth-of-type(3) {
-
-    left: 66%;
-    bottom: 27%;
-
-    animation-delay: 6s !important;
-
-}
-
+.garden.show .heart { animation: heartFloat 7s 4s ease-in-out infinite; }
+.heart:nth-of-type(1) { left: 12%; bottom: 35%; }
+.heart:nth-of-type(2) { left: 82%; bottom: 42%; animation-delay: 5s !important; }
+.heart:nth-of-type(3) { left: 66%; bottom: 27%; animation-delay: 6s !important; }
 
 @keyframes heartFloat {
-
-    0% {
-
-        transform:
-            translateY(20px)
-            scale(.7);
-
-        opacity: 0;
-
-    }
-
-    25% {
-
-        opacity: .6;
-
-    }
-
-    75% {
-
-        opacity: .45;
-
-    }
-
-    100% {
-
-        transform:
-            translateY(-100px)
-            scale(1.1);
-
-        opacity: 0;
-
-    }
-
+    0% { transform: translateY(20px) scale(.7); opacity: 0; }
+    25% { opacity: .6; }
+    75% { opacity: .45; }
+    100% { transform: translateY(-100px) scale(1.1); opacity: 0; }
 }
 
-
 /* =========================================================
-   MÓVIL
+   DISEÑO ADAPTATIVO (MÓVIL)
 ========================================================= */
 
 @media (max-width: 600px) {
-
-    .sun {
-
-        top: 6%;
-
-        right: 5%;
-
-        width: 70px;
-
-        height: 70px;
-
-    }
-
-
-    .card {
-
-        padding:
-            40px 23px;
-
-    }
-
-
-    .card h1 {
-
-        font-size: 48px;
-
-    }
-
-
-    .card p {
-
-        font-size: 16px;
-
-    }
-
-
-    .message {
-
-        top: 8%;
-
-        width: 88%;
-
-    }
-
-
-    .message h2 {
-
-        font-size: 31px;
-
-    }
-
-
-    .message p {
-
-        font-size: 15px;
-
-    }
-
-
-    .sunflower {
-
-        bottom: 12%;
-
-    }
-
-
-    .sf-left {
-
-        left: -28px;
-
-        transform:
-            scale(.58)
-            rotate(-5deg);
-
-    }
-
-
+    .sun { top: 6%; right: 5%; width: 70px; height: 70px; }
+    .card { padding: 40px 23px; }
+    .card h1 { font-size: 48px; }
+    .card p { font-size: 16px; }
+    .message { top: 8%; width: 88%; }
+    .message h2 { font-size: 31px; }
+    .message p { font-size: 15px; }
+    .sunflower { bottom: 12%; }
+    .sf-left { left: -28px; }
+    
     .sf-center {
-
         left: 50%;
-
         bottom: 8%;
+        transform: translateX(-50%) scale(.72);
+    }
+    
+    .sf-right { right: -28px; }
+    .ground { bottom: -5%; height: 32%; }
 
-        margin-left: -75px;
-
-        transform:
-            scale(.72);
-
+    @keyframes flowerAppearCenter {
+        0% { opacity: 0; transform: translateX(-50%) translateY(80px) scale(.35); }
+        65% { opacity: 1; }
+        100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(.72); }
     }
 
-
-    .sf-right {
-
-        right: -28px;
-
-        transform:
-            scale(.60)
-            rotate(5deg);
-
+    @keyframes swayCenter {
+        0%, 100% { transform: translateX(-50%) scale(.72) rotate(0deg); }
+        50% { transform: translateX(-50%) scale(.72) rotate(2deg); }
     }
-
-
-    .ground {
-
-        bottom: -5%;
-
-        height: 32%;
-
-    }
-
 }
-
-
-/* =========================================================
-   PANTALLAS MUY PEQUEÑAS
-========================================================= */
 
 @media (max-width: 380px) {
+    .card { padding: 34px 18px; }
+    .card h1 { font-size: 41px; }
+    .card p { font-size: 15px; }
+    .message h2 { font-size: 27px; }
+    .message p { font-size: 14px; }
+    .sf-left { left: -40px; }
+    .sf-right { right: -42px; }
 
-    .card {
-
-        padding:
-            34px 18px;
-
+    @keyframes flowerAppearCenter {
+        0% { opacity: 0; transform: translateX(-50%) translateY(80px) scale(.3); }
+        65% { opacity: 1; }
+        100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(.62); }
     }
 
-
-    .card h1 {
-
-        font-size: 41px;
-
+    @keyframes swayCenter {
+        0%, 100% { transform: translateX(-50%) scale(.62) rotate(0deg); }
+        50% { transform: translateX(-50%) scale(.62) rotate(2deg); }
     }
-
-
-    .card p {
-
-        font-size: 15px;
-
-    }
-
-
-    .message h2 {
-
-        font-size: 27px;
-
-    }
-
-
-    .message p {
-
-        font-size: 14px;
-
-    }
-
-
-    .sf-left {
-
-        left: -40px;
-
-        transform:
-            scale(.48)
-            rotate(-5deg);
-
-    }
-
-
-    .sf-center {
-
-        transform:
-            scale(.62);
-
-    }
-
-
-    .sf-right {
-
-        right: -42px;
-
-        transform:
-            scale(.50)
-            rotate(5deg);
-
-    }
-
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="scene">
 
-
     <!-- =====================================================
-         ESTRELLAS
+         REPRODUCTOR DE MÚSICA (OCULTO)
     ====================================================== -->
+    <!-- Reemplaza la URL del atributo src por tu canción preferida si lo deseas -->
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-112199.mp3" type="audio/mpeg">
+    </audio>
 
+    <!-- ESTRELLAS -->
     <div class="stars">
-
         <span class="star"></span>
         <span class="star"></span>
         <span class="star"></span>
@@ -2006,366 +765,141 @@ body {
         <span class="star"></span>
         <span class="star"></span>
         <span class="star"></span>
-
     </div>
 
-
-    <!-- =====================================================
-         SOL
-    ====================================================== -->
-
+    <!-- SOL Y HORIZONTE -->
     <div class="sun"></div>
-
-
-    <!-- LUZ DEL HORIZONTE -->
-
     <div class="horizon"></div>
 
-
-    <!-- =====================================================
-         PANTALLA INICIAL
-    ====================================================== -->
-
-    <section
-        class="intro"
-        id="intro"
-    >
-
+    <!-- PANTALLA INICIAL -->
+    <section class="intro" id="intro">
         <div class="card">
-
-            <div class="small-text">
-
-                un pequeño detalle para
-
-            </div>
-
-
-            <h1>
-
-                Thaly ♡
-
-            </h1>
-
-
+            <div class="small-text">un pequeño detalle para</div>
+            <h1>Thaly ♡</h1>
             <p>
-
-                Fue hecho con mucha paciencia
-                y cariño para ti.
-
+                Fue hecho con mucha paciencia y cariño para ti.
                 <br>
-
                 Espero que te guste :)
-
             </p>
-
-
-            <button
-                type="button"
-                class="open"
-                id="openButton"
-            >
-
+            <button type="button" class="open" id="openButton">
                 Abrir ♡
-
             </button>
-
         </div>
-
     </section>
 
-
-    <!-- =====================================================
-         JARDÍN
-    ====================================================== -->
-
-    <section
-        class="garden"
-        id="garden"
-    >
-
-
-        <!-- DESTELLO -->
-
+    <!-- JARDÍN -->
+    <section class="garden" id="garden">
         <div class="light-burst"></div>
 
-
-        <!-- =================================================
-             MENSAJE
-        ================================================== -->
-
         <div class="message">
-
-            <h2>
-
-                Para Thaly ♡
-
-            </h2>
-
-
-            <p>
-
-                Así como el sol ilumina los campos,
-                tú iluminas mi vida.
-
-            </p>
-
-
-            <p style="margin-top: 12px;">
-
-                Que estas flores te recuerden
-                lo especial que eres para mí.
-
-            </p>
-
+            <h2>Para Thaly ♡</h2>
+            <p>Así como el sol ilumina los campos, tú iluminas mi vida.</p>
+            <p style="margin-top: 12px;">Que estas flores te recuerden lo especial que eres para mí.</p>
         </div>
-
-
-        <!-- =================================================
-             SUELO
-        ================================================== -->
 
         <div class="ground"></div>
-
-
-        <!-- PASTO -->
-
         <div class="grass"></div>
 
-
-        <!-- =================================================
-             GIRASOL IZQUIERDO
-        ================================================== -->
-
+        <!-- GIRASOL IZQUIERDO -->
         <div class="sunflower sf-left">
-
             <div class="stem"></div>
-
             <div class="leaf left"></div>
-
             <div class="leaf right"></div>
-
-
             <div class="flower">
-
                 <div class="petals">
-
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                    <span class="petal inner"></span><span class="petal inner"></span><span class="petal inner"></span>
+                    <span class="petal inner"></span><span class="petal inner"></span><span class="petal inner"></span>
+                    <span class="petal inner"></span><span class="petal inner"></span>
                 </div>
-
-
                 <div class="center"></div>
-
             </div>
-
         </div>
 
-
-        <!-- =================================================
-             GIRASOL CENTRAL
-        ================================================== -->
-
+        <!-- GIRASOL CENTRAL -->
         <div class="sunflower sf-center">
-
             <div class="stem"></div>
-
             <div class="leaf left"></div>
-
             <div class="leaf right"></div>
-
-
             <div class="flower">
-
                 <div class="petals">
-
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                    <span class="petal inner"></span><span class="petal inner"></span><span class="petal inner"></span>
+                    <span class="petal inner"></span><span class="petal inner"></span><span class="petal inner"></span>
+                    <span class="petal inner"></span><span class="petal inner"></span>
                 </div>
-
-
                 <div class="center"></div>
-
             </div>
-
         </div>
 
-
-        <!-- =================================================
-             GIRASOL DERECHO
-        ================================================== -->
-
+        <!-- GIRASOL DERECHO -->
         <div class="sunflower sf-right">
-
             <div class="stem"></div>
-
             <div class="leaf left"></div>
-
             <div class="leaf right"></div>
-
-
             <div class="flower">
-
                 <div class="petals">
-
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-                    <span class="petal"></span>
-
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-                    <span class="petal inner"></span>
-
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                    <span class="petal inner"></span><span class="petal inner"></span><span class="petal inner"></span>
+                    <span class="petal inner"></span><span class="petal inner"></span><span class="petal inner"></span>
+                    <span class="petal inner"></span><span class="petal inner"></span>
                 </div>
-
-
                 <div class="center"></div>
-
             </div>
-
         </div>
 
-
-        <!-- =================================================
-             FLORES PEQUEÑAS
-        ================================================== -->
-
+        <!-- ELEMENTOS DECORATIVOS -->
         <span class="small-flower"></span>
         <span class="small-flower"></span>
         <span class="small-flower"></span>
         <span class="small-flower"></span>
 
-
-        <!-- =================================================
-             LUCIÉRNAGAS
-        ================================================== -->
-
         <span class="firefly"></span>
         <span class="firefly"></span>
         <span class="firefly"></span>
         <span class="firefly"></span>
         <span class="firefly"></span>
         <span class="firefly"></span>
-
-
-        <!-- =================================================
-             CORAZONES
-        ================================================== -->
 
         <span class="heart">♡</span>
         <span class="heart">♡</span>
         <span class="heart">♡</span>
-
 
     </section>
 
 </div>
 
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
+<!-- JAVASCRIPT -->
 <script>
+const openButton = document.getElementById("openButton");
+const intro = document.getElementById("intro");
+const garden = document.getElementById("garden");
+const bgMusic = document.getElementById("bgMusic");
 
+openButton.addEventListener("click", function () {
+    // Inicia la música al interactuar el usuario
+    bgMusic.play().catch(function(error) {
+        console.log("Error al reproducir audio:", error);
+    });
 
-const openButton =
-    document.getElementById("openButton");
+    // Transición de la carta
+    intro.classList.add("hidden");
 
-
-const intro =
-    document.getElementById("intro");
-
-
-const garden =
-    document.getElementById("garden");
-
-
-openButton.addEventListener(
-    "click",
-    function () {
-
-
-        /* ==============================================
-           DESAPARECE LA CARTA
-        ============================================== */
-
-        intro.classList.add("hidden");
-
-
-        /* ==============================================
-           APARECE EL JARDÍN
-        ============================================== */
-
-        setTimeout(
-            function () {
-
-                garden.classList.add("show");
-
-            },
-            450
-        );
-
-
-    }
-);
-
+    // Muestra el jardín
+    setTimeout(function () {
+        garden.classList.add("show");
+    }, 450);
+});
 </script>
 
-
 </body>
-
 </html>
