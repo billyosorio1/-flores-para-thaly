@@ -417,7 +417,7 @@ body {
 }
 
 /* =========================================================
-   GIRASOLES (CORREGIDO)
+   GIRASOLES
 ========================================================= */
 
 .sunflower {
@@ -436,7 +436,6 @@ body {
 .sf-center {
     left: 50%;
     bottom: 8%;
-    /* Utiliza transform en lugar de margin-left para evitar conflictos */
     transform: translateX(-50%) scale(1.08);
 }
 
@@ -468,20 +467,17 @@ body {
     100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Animación específica de entrada para el central que respeta el centrado */
 @keyframes flowerAppearCenter {
     0% { opacity: 0; transform: translateX(-50%) translateY(80px) scale(.45); }
     65% { opacity: 1; }
     100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1.08); }
 }
 
-/* Oscilación para los laterales */
 @keyframes swaySide {
     0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
     50% { transform: translateY(0) scale(1) rotate(2deg); }
 }
 
-/* Oscilación para el central sin perder la posición x = -50% */
 @keyframes swayCenter {
     0%, 100% { transform: translateX(-50%) scale(1.08) rotate(0deg); }
     50% { transform: translateX(-50%) scale(1.08) rotate(2deg); }
@@ -592,7 +588,7 @@ body {
 }
 
 /* =========================================================
-   DETALLES EXTRA (FLORES PEQUEÑAS, LUCIÉRNAGAS, CORAZONES)
+   DETALLES EXTRA
 ========================================================= */
 
 .small-flower {
@@ -678,7 +674,7 @@ body {
 }
 
 /* =========================================================
-   DISEÑO ADAPTATIVO (MÓVIL)
+   DISEÑO ADAPTATIVO
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -740,12 +736,9 @@ body {
 
 <div class="scene">
 
-    <!-- =====================================================
-         REPRODUCTOR DE MÚSICA (OCULTO)
-    ====================================================== -->
-    <!-- Reemplaza la URL del atributo src por tu canción preferida si lo deseas -->
+    <!-- REPRODUCTOR DE AUDIO CON EL NOMBRE ACCIÓN.MP3 -->
     <audio id="bgMusic" loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-112199.mp3" type="audio/mpeg">
+        <source src="acción.mp3" type="audio/mpeg">
     </audio>
 
     <!-- ESTRELLAS -->
@@ -800,7 +793,7 @@ body {
         <div class="ground"></div>
         <div class="grass"></div>
 
-        <!-- GIRASOL IZQUIERDO -->
+        <!-- GIRASOLES -->
         <div class="sunflower sf-left">
             <div class="stem"></div>
             <div class="leaf left"></div>
@@ -819,7 +812,6 @@ body {
             </div>
         </div>
 
-        <!-- GIRASOL CENTRAL -->
         <div class="sunflower sf-center">
             <div class="stem"></div>
             <div class="leaf left"></div>
@@ -838,7 +830,6 @@ body {
             </div>
         </div>
 
-        <!-- GIRASOL DERECHO -->
         <div class="sunflower sf-right">
             <div class="stem"></div>
             <div class="leaf left"></div>
@@ -878,7 +869,6 @@ body {
 
 </div>
 
-<!-- JAVASCRIPT -->
 <script>
 const openButton = document.getElementById("openButton");
 const intro = document.getElementById("intro");
@@ -886,15 +876,12 @@ const garden = document.getElementById("garden");
 const bgMusic = document.getElementById("bgMusic");
 
 openButton.addEventListener("click", function () {
-    // Inicia la música al interactuar el usuario
     bgMusic.play().catch(function(error) {
         console.log("Error al reproducir audio:", error);
     });
 
-    // Transición de la carta
     intro.classList.add("hidden");
 
-    // Muestra el jardín
     setTimeout(function () {
         garden.classList.add("show");
     }, 450);
